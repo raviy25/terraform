@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"cluster","Source":"../../modules/gcp-modules/gcp-gke-cluster","Dir":"../../modules/gcp-modules/gcp-gke-cluster"},{"Key":"cluster.gke_with_node_group","Source":"../gcp-gke","Dir":"../../modules/gcp-modules/gcp-gke"},{"Key":"cluster.vpc_with_subnets","Source":"../gcp-vpc","Dir":"../../modules/gcp-modules/gcp-vpc"}]}
