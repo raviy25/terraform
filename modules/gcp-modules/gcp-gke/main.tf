@@ -67,6 +67,16 @@ resource "google_container_cluster" "gke" {
 
   network    = var.network
   subnetwork = var.subnetwork
+
+  ip_allocation_policy {
+    cluster_secondary_range_name = "${var.environment}-gke-network-pods"
+    services_secondary_range_name = "${var.environment}-gke-network-services"
+  }
+
+  private_cluster_config {
+    enable_private_nodes    = var.enable_private_nodes
+    enable_private_endpoint = var.enable_private_endpoint
+  }
 }
 
 # self managed nodepool
@@ -99,21 +109,11 @@ resource "google_container_node_pool" "nodepools" {
       initial_node_count,
       node_count,
       node_config,
-      node_locations,
-      node_version
+      node_locations
     ]
   }
 
   version    = local.master_version
   depends_on = [google_container_cluster.gke]
 
-  ip_allocation_policy {
-    cluster_secondary_range_name = "${var.environment}-gke-network-pods"
-    services_secondary_range_name = "${var.environment}-gke-network-services"
-  }
-
-  private_cluster_config {
-    enable_private_nodes    = var.enable_private_nodes
-    enable_private_endpoint = var.enable_private_endpoint
-  }
 }

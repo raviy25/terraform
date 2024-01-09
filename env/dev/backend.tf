@@ -2,6 +2,6 @@
 # s3 bucket is configured at command line
 terraform {
   backend "gcs" {
-    bucket = "dev-gcp-terraform"
+    bucket = "cosnix-tf-dev"
   }
 }

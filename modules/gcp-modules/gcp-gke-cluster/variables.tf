@@ -37,3 +37,23 @@ variable "nodepools" {
     }
   }
 }
+
+variable "environment" {
+  type = string
+  default = "dev"
+}
+
+variable "k8s_service_cidr" {
+  type = string
+  default = ""
+}
+
+variable "router_name" {
+ type = string
+ default = ""
+}
+
+variable "k8s_pod_cidr" {
+  type = string
+  default = ""
+}

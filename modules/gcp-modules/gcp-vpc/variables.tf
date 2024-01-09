@@ -29,3 +29,18 @@ variable "region" {
   type        = string
   description = "The GCP region for this subnetwork."
 }
+
+variable "k8s_pod_cidr" {
+  type = string
+  description = "The range of internal addresses that are assigned to pods in gke cluster."
+}
+
+variable "k8s_service_cidr" {
+  type = string
+  description = "The range of internal addresses that are assigned to services in gke cluster."
+}
+
+variable "router_name" {
+  type = string
+  description = "The router for the vpc to connect to internet from subnet"
+}

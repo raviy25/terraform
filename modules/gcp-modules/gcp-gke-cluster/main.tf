@@ -11,6 +11,10 @@ module "vpc_with_subnets" {
   region = var.region
 
   cidrBlock = var.cidrBlock
+  k8s_service_cidr = var.k8s_service_cidr
+  router_name = var.router_name
+  k8s_pod_cidr = var.k8s_pod_cidr
+
 }
 
 # invoking gke module to create gke cluster and node group
@@ -24,4 +28,5 @@ module "gke_with_node_group" {
   nodepools    = var.nodepools
   network      = module.vpc_with_subnets.vpc_self_link
   subnetwork   = module.vpc_with_subnets.subnet_self_link
+  environment = var.environment
 }
