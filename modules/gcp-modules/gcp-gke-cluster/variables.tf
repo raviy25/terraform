@@ -32,7 +32,7 @@ variable "nodepools" {
     worker = {
       name         = "worker"
       node_labels  = { "worker-name" = "worker" }
-      machine_type = "n1-standard-1"
+      machine_type = "e2-small"
       node_count   = 1
     }
   }
